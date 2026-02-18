@@ -32,6 +32,7 @@
                 <th scope="col">Nome Da Terafa</th>
                 <th scope="col">Data de Execução</th>
                 <th scope="col">#</th>
+                <th scope="col">#</th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +40,8 @@
                 <td data-th-text="${task.id}"></td>
                 <td data-th-text="${task.name}"></td>
                 <td data-th-text="${task.date}"></td>
-                <th><a class="btn btn-secondary" th:href="@{'/edit/'+${task.id}}" role="button">editar</a></th>
+                <th><a class="btn btn-secondary"  role="button" th:href="@{'/edit/'+${task.id}}">Editar</a></th>
+                <th><a class="btn btn-secondary"  role="button" th:href="'/delete/'+${task.id}">Excluir</a></th>
             </tr>
 
         </tbody>

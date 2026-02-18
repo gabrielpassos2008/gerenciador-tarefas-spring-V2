@@ -100,4 +100,10 @@ public class TaskController {
 
         return mv;
     }
+
+    @GetMapping("delete/{id}")
+    public String getDeletar(@PathVariable("id") Long id) {
+        tasks.removeIf(task -> task.getId().equals(id));
+        return "redirect:/";
+    }
 }
