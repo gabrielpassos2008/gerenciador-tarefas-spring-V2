@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Home</title>
+</head>
+
+<body>
+
+    <ul class="nav nav-tabs justify-content-sm-center ">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/create">Cadastrar Tarefa</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/list">Listar Tarefa</a>
+        </li>
+    </ul>
+    <div class="px-4 pt-2 my-2 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis fs-2">Meu primeiro Spring usando o thymeleaf!</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-3">Este foi o meu primeiro projeto utilizando Spring Boot integrado com Thymeleaf para
+                renderização das páginas web.</p>
+            <P class="lead mb-3">O objetivo deste sistema é praticar os conceitos fundamentais do desenvolvimento
+                backend com Java, aplicando o padrão de arquitetura MVC (Model-View-Controller), organização em camadas
+                e integração entre controller, service e repository.</P>
+            <h2 class="display-4 fw-bold text-body-emphasis fs-3">Durante o desenvolvimento, trabalhei com:</h2>
+            <ul class="list-group mb-3">
+                <li class="list-group-item">Estrutura de rotas com Spring</li>
+                <li class="list-group-item">Templates dinâmicos com Thymeleaf</li>
+                <li class="list-group-item">Integração com Bootstrap para estilização</li>
+                <li class="list-group-item">Manipulação de objetos e listas</li>
+                <li class="list-group-item">Conceitos de orientação a objetos</li>
+                <li class="list-group-item">Estruturação de projeto seguindo boas práticas</li>
+            </ul>
+
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3 ">
+                <a class="btn btn-primary px-5" href="https://www.youtube.com/watch?v=arEf4OXsUXI&t=1768s"
+                    role="button">link da Aula</a>
+                <a class="btn btn-primary px-5" href="https://github.com/gabrielpassos2008/primeiro__spring_thymeleaf"
+                    role="button">link do Repositório</a>
+            </div>
+        </div>
+    </div>
+    <footer class=" text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">
+                © 2025 Gabriel Passos. Projeto desenvolvido com Spring Boot e Thymeleaf.
+            </p>
+            <small>
+                <a href="https://github.com/gabrielpassos2008" class="text-decoration-none justify-content-sm-center ">
+                    GitHub
+                </a>
+            </small>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Listagem de Tarefas</title>
+</head>
+
+<body>
+    <ul class="nav nav-tabs justify-content-sm-center">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/create" >Cadastrar Tarefa</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/list" aria-current="page">Listar Tarefa</a>
+        </li>
+    </ul>
+
+
+    <h1 class="display-4 fw-bold text-body-emphasis fs-2 pt-2">Lista das Tarefas Cadastradas.</h1>
+    <table class="table container">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome Da Terafa</th>
+                <th scope="col">Data de Execução</th>
+                <th scope="col">#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-th-each="task : ${tasks}">
+                <td data-th-text="${task.id}"></td>
+                <td data-th-text="${task.name}"></td>
+                <td data-th-text="${task.date}"></td>
+                <th><a class="btn btn-secondary" th:href="@{'/edit/'+${task.id}}" role="button">editar</a></th>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="container">
+        <a class="btn btn-primary" href="/create" role="button">Voltar ao Cadastro</a>
+    </div>
+</body>
+
+</html>
