@@ -36,6 +36,12 @@
             <label for="exampleInputPassword1" class="form-label">Data da terafa</label>
             <input type="text" class="form-control" id="exampleInputPassword1" name="date" th:value="${task.date}">
         </div>
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="status">
+                <option value="pendente">Pendente</option>
+                <option alue="concluida">Concluída</option>
+            </select>
+        </div>
 
         <button type="submit" class="btn btn-primary">Cadastrar</button>
 
