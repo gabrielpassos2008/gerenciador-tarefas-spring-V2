@@ -6,7 +6,7 @@ public class Task {
 
     private Long id;
     private String name;
-
+    private String status;
     private Date date;
 
     // Construtor vazio (obrigatório para o Spring)
@@ -14,9 +14,10 @@ public class Task {
     }
 
     // Construtor completo
-    public Task(Long id, String name, Date date) {
+    public Task(Long id, String name, String status, Date date) {
         this.id = id;
         this.name = name;
+        this.status = status;
         this.date = date;
     }
 
@@ -27,6 +28,10 @@ public class Task {
 
     public String getName() {
         return name;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public Date getDate() {
@@ -40,6 +45,10 @@ public class Task {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public void setDate(Date date) {

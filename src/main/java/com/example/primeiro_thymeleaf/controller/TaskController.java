@@ -62,7 +62,7 @@ public class TaskController {
             Long id = tasks.size() + 1L;
 
             // Cria uma nova Task e adiciona na lista
-            tasks.add(new Task(id, task.getName(), task.getDate()));
+            tasks.add(new Task(id, task.getName(), task.getStatus(), task.getDate()));
         }
 
         // Redireciona para a página de listagem
