@@ -1,5 +1,7 @@
 package com.example.primeiro_thymeleaf.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,9 +26,19 @@ public class TaskController {
 
     // Mapeia a rota principal "/"
     @GetMapping("/")
-    public String home() {
+    public ModelAndView home() {
+        List<Task> tasks = taskService.returnList();
+        int total = tasks.size();
+        int completed = (int) tasks.stream()
+                .filter(task -> "Concluída".equalsIgnoreCase(task.getStatus()))
+                .count();
+        int pending = total - completed;
+        ModelAndView mv = new ModelAndView("home");
+        mv.addObject("totalTasks", total);
+        mv.addObject("completedTasks", completed);
+        mv.addObject("pendingTasks", pending);
         // Retorna a página home.html
-        return "home";
+        return mv;
     }
 
     // Rota GET para abrir a página de criação
