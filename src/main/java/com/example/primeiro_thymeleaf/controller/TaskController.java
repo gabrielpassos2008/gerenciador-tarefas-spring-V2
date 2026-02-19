@@ -31,16 +31,8 @@ public class TaskController {
 
     // Rota GET para abrir a página de criação
     @GetMapping("/create")
-    public ModelAndView getCreate() {
-
-        // Cria um ModelAndView apontando para o template create.html
-        ModelAndView mv = new ModelAndView("create");
-
-        // Envia um objeto Task vazio para o formulário
-        // Necessário para o Thymeleaf fazer o binding dos campos
-        mv.addObject("task", new Task());
-
-        return mv;
+    public String getCreate() {
+        return "create";
     }
 
     // Rota POST responsável por salvar (criar ou editar) uma tarefa
@@ -69,18 +61,10 @@ public class TaskController {
         return mv;
     }
 
-    // Rota GET para editar uma tarefa específica
-    // O {id} vem da URL (ex: /edit/1)
-    @GetMapping("/edit/{id}")
-    public ModelAndView getEdit(@PathVariable("id") Long id) {
-
-        // Reutiliza a página create.html para edição
-        ModelAndView mv = new ModelAndView("create");
-
-        // Busca a tarefa pelo ID no service
-        // E envia para o formulário já preenchido
-        mv.addObject("task", taskService.EdirTask(id));
-
+    @GetMapping("create/edit/{id}")
+    public ModelAndView GetEditId(@PathVariable("id") Long id) {
+        ModelAndView mv = new ModelAndView("edit");
+        mv.addObject("task", taskService.editTask(id));
         return mv;
     }
 

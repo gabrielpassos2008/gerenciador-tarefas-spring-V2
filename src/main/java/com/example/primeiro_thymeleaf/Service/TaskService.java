@@ -64,7 +64,7 @@ public class TaskService {
     }
 
     // Método que busca uma tarefa específica pelo ID
-    public Task EdirTask(Long id) {
+    public Task editTask(Long id) {
 
         // Procura a tarefa pelo ID recebido
         // Utilizado para preencher o formulário de edição
