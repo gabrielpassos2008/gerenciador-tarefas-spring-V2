@@ -24,16 +24,16 @@
     </ul>
 
     <h1 class="display-4 fw-bold text-body-emphasis fs-2 pt-2">Cadastre sua Tarefa</h1>
-    <form class="container" method="post" action="/create" th:object="${task}">
-        <input type="hidden" th:value="${task.id}" name="id">
+    <form class="container" method="post" action="/create" >
+        <input type="hidden" name="id">
         <div class="mb-3">
             <label for="inputTask" class="form-label">Nome da Tarefa</label>
-            <input type="text" class="form-control" id="inputTask" name="name" th:value="${task.name}">
+            <input type="text" class="form-control" id="inputTask" name="name" >
         </div>
 
         <div class="mb-3">
             <label for="inputDate" class="form-label">Data da terafa</label>
-            <input type="text" class="form-control" id="inputDate" name="date" th:value="${task.date}">
+            <input type="text" class="form-control" id="inputDate" name="date">
         </div>
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" name="status">
