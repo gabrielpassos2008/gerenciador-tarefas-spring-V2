@@ -28,7 +28,7 @@
         <div class="container text-center">
             <div class="row justify-content-center g-2 ">
                 <div class="col-auto ">
-                    <div class="card border border-5 border-primary" style="width: 18rem;" >
+                    <div class="card border border-5 border-primary shadow" style="width: 18rem;" >
                         <div class="card-body">
                             <h2 class="display-4 fw-bold text-body-emphasis fs-4">Total de Tarefas:</h2>
                             <p class="card-text fs-4" th:text="${totalTasks}"></p>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <div class="card border border-5 border-warning" style="width: 18rem;">
+                    <div class="card border border-5 border-warning shadow" style="width: 18rem;">
                         <div class="card-body">
                             <h2 class="display-4 fw-bold text-body-emphasis fs-4">Total de Pendentes:</h2>
                             <p class="card-text fs-4" th:text="${pendingTasks}"></p>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <div class="card border border-5 border-success" style="width: 18rem;">
+                    <div class="card border border-5 border-success shadow" style="width: 18rem;">
                         <div class="card-body">
                             <h2 class="display-4 fw-bold text-body-emphasis fs-4">Total de Concluídas:</h2>
                             <p class="card-text fs-4"th:text ="${completedTasks}"></p>
@@ -55,27 +55,27 @@
         </div>
     </main>
     <section class="px-4 pt-2 my-2 text-center border-bottom">
-        <h1 class="display-4 fw-bold text-body-emphasis fs-2">Meu primeiro Spring usando o thymeleaf!</h1>
+        <h1 class="display-4 fw-bold text-body-emphasis fs-2">Gerenciador de Tarefas – Versão 2</h1>
         <div class="col-lg-6 mx-auto">
-            <p class="lead mb-3">Este foi o meu primeiro projeto utilizando Spring Boot integrado com Thymeleaf para
-                renderização das páginas web.</p>
-            <P class="lead mb-3">O objetivo deste sistema é praticar os conceitos fundamentais do desenvolvimento
-                backend com Java, aplicando o padrão de arquitetura MVC (Model-View-Controller), organização em camadas
-                e integração entre controller, service e repository.</P>
-            <h2 class="display-4 fw-bold text-body-emphasis fs-3">Durante o desenvolvimento, trabalhei com:</h2>
+            <p class="lead mb-3">Esta é a evolução do meu primeiro projeto utilizando Spring Boot integrado com Thymeleaf para renderização das páginas web.</p>
+            <P class="lead mb-3">Nesta nova versão, o sistema deixou de ser apenas um CRUD básico e passou a incorporar melhorias estruturais, funcionais e visuais, aproximando-se mais de uma aplicação real.</P>
+            <p class="lead mb-3">O objetivo desta versão foi aprofundar os conceitos fundamentais do desenvolvimento backend com Java, aplicando de forma mais organizada o padrão de arquitetura MVC (Model-View-Controller), reforçando a separação de responsabilidades entre Controller, Service e Repository, além de melhorar a experiência visual com Bootstrap.</p>
+            <h2 class="display-4 fw-bold text-body-emphasis fs-3">Evoluções da Versão 2</h2>
             <ul class="list-group mb-3">
-                <li class="list-group-item">Estrutura de rotas com Spring</li>
-                <li class="list-group-item">Templates dinâmicos com Thymeleaf</li>
-                <li class="list-group-item">Integração com Bootstrap para estilização</li>
-                <li class="list-group-item">Manipulação de objetos e listas</li>
-                <li class="list-group-item">Conceitos de orientação a objetos</li>
-                <li class="list-group-item">Estruturação de projeto seguindo boas práticas</li>
+                <li class="list-group-item">Implementação correta do padrão MVC (Controller → Service → Repository)</li>
+                <li class="list-group-item">Separação clara de responsabilidades entre camadas</li>
+                <li class="list-group-item">Controller deixando de acessar lógica diretamente e usando Service</li>
+                <li class="list-group-item">Criação de método de busca de tarefas</li>
+                <li class="list-group-item">Implementação de filtros (tarefas pendentes e concluídas)</li>
+                <li class="list-group-item">Validação básica de entrada (null e isBlank())</li>
+                <li class="list-group-item">Uso de Stream() para manipulação de listas</li>
+                <li class="list-group-item">Uso de filter() para aplicar regras de busca</li>
+                <li class="list-group-item">Centralização da lógica de contagem de tarefas no backend</li>
+                <li class="list-group-item">Home agora recebe dados dinâmicos do Controller</li>
+                <li class="list-group-item">Preparação do projeto para futura implementação de tratamento de erros</li>
             </ul>
-
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3 ">
-                <a class="btn btn-primary px-5" href="https://www.youtube.com/watch?v=arEf4OXsUXI&t=1768s"
-                    role="button">link da Aula</a>
-                <a class="btn btn-primary px-5" href="https://github.com/gabrielpassos2008/primeiro__spring_thymeleaf"
+                <a class="btn btn-primary px-5" href="https://github.com/gabrielpassos2008"
                     role="button">link do Repositório</a>
             </div>
 
