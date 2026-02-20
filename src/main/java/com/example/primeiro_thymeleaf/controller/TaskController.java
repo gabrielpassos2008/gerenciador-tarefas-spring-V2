@@ -1,11 +1,11 @@
 package com.example.primeiro_thymeleaf.controller;
 
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.primeiro_thymeleaf.Service.TaskService;
@@ -53,17 +53,20 @@ public class TaskController {
         return "redirect:/list";
     }
 
-    // Rota GET para listar todas as tarefas
     @GetMapping("/list")
-    public ModelAndView getList() {
+    public ModelAndView getList(@RequestParam(required = false) String search) {
 
-        // Cria ModelAndView apontando para list.html
         ModelAndView mv = new ModelAndView("list");
-
-        // Busca a lista de tarefas no service
-        // E envia para a view com o nome "tasks"
-        mv.addObject("tasks", taskService.returnList());
-
+        // Verifica se o parâmetro foi enviado (não é null)
+        // e se contém texto válido (não está vazio nem só com espaços)
+        if (search != null && !search.isBlank()) {
+            // Se existe um valor de busca válido, chama o service para retornar tarefas
+            // filtradas
+            mv.addObject("tasks", taskService.searchTasks(search));
+        } else {
+            // Se não existe busca, retorna todas as tarefas
+            mv.addObject("tasks", taskService.returnList());
+        }
         return mv;
     }
 
@@ -84,4 +87,5 @@ public class TaskController {
         // Redireciona para a home após deletar
         return "redirect:/";
     }
+
 }

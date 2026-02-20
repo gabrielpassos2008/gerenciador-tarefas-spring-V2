@@ -1,6 +1,7 @@
 package com.example.primeiro_thymeleaf.Service;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.springframework.stereotype.Service;
 
@@ -39,7 +40,7 @@ public class TaskService {
             // Caso o ID seja nulo, estamos criando uma nova tarefa
 
             // Gera um novo ID baseado no tamanho da lista atual
-            Long id = repository.FindAll().size() + 1L;
+            Long id = repository.findAll().size() + 1L;
 
             // Define o ID na tarefa antes de salvar
             task.setId(id);
@@ -60,7 +61,7 @@ public class TaskService {
     public List<Task> returnList() {
 
         // Delegando a responsabilidade para o repository
-        return repository.FindAll();
+        return repository.findAll();
     }
 
     // Método que busca uma tarefa específica pelo ID
@@ -73,22 +74,27 @@ public class TaskService {
 
     public int getCompletedTasks() {
         return (int) repository
-                .FindAll()
+                .findAll()
                 .stream()
                 .filter(task -> "concluida".equalsIgnoreCase(task.getStatus()))
                 .count();
     }
 
     public int getTotalTasks() {
-        return repository.FindAll().size();
+        return repository.findAll().size();
     }
 
     public int getpendingTasks() {
         return (int) repository
-                .FindAll()
+                .findAll()
                 .stream()
                 .filter(task -> "pendente".equalsIgnoreCase(task.getStatus()))
                 .count();
     }
 
+    public List<Task> searchTasks(String searchValue) {
+        return repository.findAll().stream()
+                .filter(task -> task.getName().toLowerCase().contains(searchValue.toLowerCase()))
+                .toList();
+    }
 }

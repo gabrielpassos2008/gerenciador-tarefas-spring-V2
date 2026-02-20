@@ -17,7 +17,7 @@ public class TaskRepository {
     private List<Task> tasks = new ArrayList<>();
 
     // Retorna todas as tarefas armazenadas
-    public List<Task> FindAll() {
+    public List<Task> findAll() {
         return tasks;
     }
 
