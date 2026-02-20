@@ -32,7 +32,7 @@
                         <div class="card-body">
                             <h2 class="display-4 fw-bold text-body-emphasis fs-4">Total de Tarefas</h2>
                             <p class="card-text" th:text="${totalTasks}"></p>
-                            <a href="#" class="btn btn-primary px-5">Ver Mais</a>
+                            <a href="/list" class="btn btn-primary px-5">Ver Mais</a>
                         </div>
                     </div>
                 </div>
@@ -40,8 +40,8 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h2 class="display-4 fw-bold text-body-emphasis fs-4">Pendentes</h2>
-                            <p class="card-text" th:text ="${completedTasks}"></p>
-                            <a href="#" class="btn btn-primary px-5">Ver Mais</a>
+                            <p class="card-text" th:text="${pendingTasks}"></p>
+                            <a href="" class="btn btn-primary px-5">Ver Mais</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h2 class="display-4 fw-bold text-body-emphasis fs-4">Concluídas</h2>
-                            <p class="card-text" th:text="${pendingTasks}"></p>
+                            <p class="card-text"th:text ="${completedTasks}"></p>
                             <a href="#" class="btn btn-primary px-5">Ver Mais</a>
                         </div>
                     </div>

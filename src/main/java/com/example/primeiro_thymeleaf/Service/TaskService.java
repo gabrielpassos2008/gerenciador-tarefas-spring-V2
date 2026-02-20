@@ -70,4 +70,25 @@ public class TaskService {
         // Utilizado para preencher o formulário de edição
         return repository.findById(id);
     }
+
+    public int getCompletedTasks() {
+        return (int) repository
+                .FindAll()
+                .stream()
+                .filter(task -> "concluida".equalsIgnoreCase(task.getStatus()))
+                .count();
+    }
+
+    public int getTotalTasks() {
+        return repository.FindAll().size();
+    }
+
+    public int getpendingTasks() {
+        return (int) repository
+                .FindAll()
+                .stream()
+                .filter(task -> "pendente".equalsIgnoreCase(task.getStatus()))
+                .count();
+    }
+
 }

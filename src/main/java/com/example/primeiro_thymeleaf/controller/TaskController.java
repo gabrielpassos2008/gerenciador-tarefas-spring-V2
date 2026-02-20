@@ -27,16 +27,10 @@ public class TaskController {
     // Mapeia a rota principal "/"
     @GetMapping("/")
     public ModelAndView home() {
-        List<Task> tasks = taskService.returnList();
-        int total = tasks.size();
-        int completed = (int) tasks.stream()
-                .filter(task -> "Concluída".equalsIgnoreCase(task.getStatus()))
-                .count();
-        int pending = total - completed;
         ModelAndView mv = new ModelAndView("home");
-        mv.addObject("totalTasks", total);
-        mv.addObject("completedTasks", completed);
-        mv.addObject("pendingTasks", pending);
+        mv.addObject("totalTasks", taskService.getTotalTasks());
+        mv.addObject("completedTasks", taskService.getCompletedTasks());
+        mv.addObject("pendingTasks", taskService.getpendingTasks());
         // Retorna a página home.html
         return mv;
     }
